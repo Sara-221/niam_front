@@ -4,7 +4,7 @@ export const Navbar = () => {
   return (
     <>
         <nav className="navbar navbar-light bg-light">
-            <div className="container-md py-1">
+            <div className="container-fluid px-5 py-1">
                 <a className="navbar-brand">Hola, <span>Usuario</span></a>
                 <div>
                     <svg 

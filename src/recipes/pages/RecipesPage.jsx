@@ -15,7 +15,7 @@ export const RecipesPage = () => {
 
     {/* Listado de Recetas */}
     <div className='container-fluid row'>
-      <div className='col-4'>
+      <div className='col-3'>
         {/* Filtro */}
         <CategoriesFilter/>
       </div>
