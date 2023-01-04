@@ -1,0 +1,12 @@
+.pagCompleta {
+    height: 100vh;
+}
+
+.loginBg {
+    height: 80vh;
+    background-color: var(--color-fondo);
+    background-image: url('../../assets/img/niam-login-img.png');
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+}

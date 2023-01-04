@@ -1,0 +1,69 @@
+/* Google fonts (tipografía) */
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+/* Declaración de Variables */
+:root {
+    /* Colores */
+    --color-fondo: #F6E5C3;
+
+    /* Tipografia */
+    --fuente-titulo: 'Amaranth', sans-serif;
+    --fuente-parrafo: 'Open Sans', sans-serif;
+    --peso-titulo: 700;
+    --peso-subtitulo: 600;
+    --peso-medium: 500;
+    --peso-parrafo: 400;
+}
+
+/* Normalizadores */
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    /* outline: 2px dashed yellowgreen; */
+}
+
+h1, h2, h4 {
+    font-family: var(--fuente-titulo);
+    font-weight: var(--peso-parrafo);
+}
+
+h3 {
+    font-family: var(--fuente-parrafo);
+    font-weight: var(--peso-subtitulo);
+}
+
+h5, h6, a {
+    font-family: var(--fuente-parrafo);
+    font-weight: var(--peso-medium);
+}
+
+p, span, label, ul {
+    font-family: var(--fuente-parrafo);
+    font-family: var(--peso-parrafo);
+}
+
+
+/* Reglas recursivas */
+.colorFondo {
+    background-color: var(--color-fondo);
+}
+
+.subtitulo::after {
+    content: " ";
+    display:inline-block;
+    width: 60%;
+    height: 5px;
+    margin-left: 16px;
+    background-color: var(--color-fondo);
+}
+
+
+/* Componente: filtro de categorías */
+.activeCategory {
+    font-weight: var(--peso-subtitulo);
+    border-top: 5px solid var(--color-fondo) !important;
+    border-bottom: 5px solid var(--color-fondo);
+    border-left: 0;
+    border-right: 0;
+}
