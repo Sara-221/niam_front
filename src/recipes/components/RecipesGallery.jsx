@@ -40,7 +40,7 @@ export const RecipesGallery = () => {
   return (
     <>
     {/* Pintamos las cards con cada una de las recetas guardadas */}
-    <div className='row row-cols-1 row-cols-md-2'>
+    <div className='row row-cols-sm-2 pe-5'>
       {
         tmpRecipeList.map(rec=>(
           <RecipeCard key={rec.id} {...rec}/>

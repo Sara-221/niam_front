@@ -5,6 +5,7 @@
 :root {
     /* Colores */
     --color-fondo: #F6E5C3;
+    --color-titulo: #3D495C;
 
     /* Tipografia */
     --fuente-titulo: 'Amaranth', sans-serif;
@@ -26,6 +27,7 @@
 h1, h2, h4 {
     font-family: var(--fuente-titulo);
     font-weight: var(--peso-parrafo);
+    color: var(--color-titulo);
 }
 
 h3 {
@@ -36,6 +38,8 @@ h3 {
 h5, h6, a {
     font-family: var(--fuente-parrafo);
     font-weight: var(--peso-medium);
+    text-transform: capitalize;
+    color: var(--color-titulo);
 }
 
 p, span, label, ul {

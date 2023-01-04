@@ -1,4 +1,4 @@
-import { BtnAddRecipe, CategoriesFilter, Navbar, RecipesGallery } from "../components"
+import { BtnAddRecipe, CategoriesFilter, FormModal, Navbar, RecipesGallery } from "../components"
 
 
 export const RecipesPage = () => {
@@ -15,7 +15,7 @@ export const RecipesPage = () => {
 
     {/* Listado de Recetas */}
     <div className='container-fluid row'>
-      <div className='col-3'>
+      <div className='col-sm-3'>
         {/* Filtro */}
         <CategoriesFilter/>
       </div>
@@ -25,6 +25,7 @@ export const RecipesPage = () => {
         <RecipesGallery/>
       </div>
       <BtnAddRecipe/>
+      <FormModal/>
     </div>
 
     {/* Pie de Página */}

@@ -6,7 +6,7 @@ export const CategoriesFilter = () => {
   const navigate=useNavigate();
 
   return (
-    <aside className='p-5'>
+    <aside className='p-2 p-sm-5'>
         <h4>Categorías</h4>
         <nav className='list-group'>
           {/* En la siguiente lista, asignamos de forma condicional la clase de CSS "activeCategory", dependiendo de si la categoría ha sido seleccionada o no por el usuario */}
