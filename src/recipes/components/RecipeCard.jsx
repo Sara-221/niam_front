@@ -1,6 +1,8 @@
 import React from 'react'
 
-export const RecipeCard = ({name, category, time, url, ingredients, method, notas, id}) => {
+export const RecipeCard = ({recipe}) => {
+
+  const {name, category, time, url, ingredients, method, notes, id} = recipe
 
   const iconURL = `/img/categories/${category}.png`
   

@@ -1,4 +1,5 @@
 export * from './Navbar'
+export * from './RecipesList'
 export * from './CategoriesFilter'
 export * from './RecipesGallery'
 export * from './RecipeCard'
