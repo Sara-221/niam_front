@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
+import { useUiStore } from '../hooks/useUiStore';
 
 // Estilos de la modal, como descritos en la documentación de react-modal
 const customStyles = {
@@ -13,18 +14,51 @@ const customStyles = {
     },
   };
 
+  // La ventana modal envuelve toda la aplicación
   Modal.setAppElement('#root');
 
 export const FormModal = () => {
     
-    const [modalIsOpen, setIsOpen] = useState(true)
+    // Desestructuramos del store los estados y acciones que necesitamos utilizar en este componente:
+    const {modalIsOpen, closeModal} = useUiStore()
 
-    const openModal=()=>{
-        setIsOpen(true)
+    // Declaración temporal de los valores introducidos en formulario de receta:
+    const [formValues, setFormValues] = useState({
+        name: '',
+        category: '',
+        link: '',
+        time: '',
+        ingredients:'',
+        method: '',
+        notes: ''
+    })
+
+    // Declaramos un array, inicialmente vacío, que acumulará y mostrará los errores resultantes de la validación
+    const [errors, setErrors] = useState([])
+
+    // Función que maneja los cambios en los campos de formulario
+    const handleInputChange=({target})=>{
+        setFormValues({
+            ...formValues,
+            [target.name]:target.value
+        })
     }
 
-    const closeModal=()=>{
-        setIsOpen(false)
+    // Función que maneja el formulario:
+    const handleSubmit=(ev)=>{
+        // Impedir que se recargue la página al enviar el formulario
+        ev.preventDefault()
+
+        // Reseteamos los errores
+        setErrors([])
+
+        // Validación del formulario
+
+
+        // Guardar los valores introducidos por el usuario
+
+        // Cerrar la ventana modal
+        closeModal()
     }
 
   return (
@@ -36,18 +70,26 @@ export const FormModal = () => {
         >
         
         <h2 className='px-2'>Añadir receta</h2>
-        <form className='form-group px-2'>
+        <form 
+            onSubmit={handleSubmit}
+            className='form-group px-2'
+            autoComplete='off'>
             <label>Nombre de la receta</label>
             <input 
                 type="text" 
-                id='name'
+                name='name'
+                value={formValues.name}
+                onChange={handleInputChange}
                 className='form-control my-1' />
             <div className='row d-flex align-items-center justify-content-start my-3'>
                 <div className='col-3'>
                     <label>Categoría</label>
                     <select 
-                        id='category'
-                        className='form-control'>
+                        name='category'
+                        value={formValues.category}
+                        onChange={handleInputChange}
+                        className='form-select'>
+                        <option value=""></option>
                         <option value="aperitivo">Aperitivo</option>
                         <option value="desayuno">Desayuno</option>
                         <option value="ensalada">Ensalada</option>
@@ -56,39 +98,62 @@ export const FormModal = () => {
                         <option value="postre">Postre</option>
                     </select>
                 </div>
-                <div className='col-4'>
+                <div className='col-sm-5'>
                     <label>Enlace a la receta</label>
                     <input 
                         type="text"
-                        id='link' />
+                        name='link' 
+                        value={formValues.link}
+                        onChange={handleInputChange}
+                        className='form-control'/>
                 </div>
-                <div className='col-3'>
+                <div className='col-sm-4'>
                     <label>Tiempo de preparación</label>
                     <input 
                         type="text"
-                        id='time' />
+                        name='time'
+                        value={formValues.time}
+                        onChange={handleInputChange}
+                        className='form-control' />
                 </div>
             </div>
             <label>Ingredientes</label>
             <textarea
-                id='ingredients'
+                name='ingredients'
+                value={formValues.ingredients}
+                onChange={handleInputChange}
                 className='form-control my-1'
                 rows='2'>
             </textarea>
             <label>Elaboración</label>
             <textarea
-                id='method'
+                name='method'
+                value={formValues.method}
+                onChange={handleInputChange}
                 rows='4'
                 className='form-control my-1'>
             </textarea>
             <label>Notas</label>
             <textarea
-                id='notes'
+                name='notes'
+                value={formValues.notes}
+                onChange={handleInputChange}
                 rows='1'
                 className='form-control'>
             </textarea>
-
-
+            {/* Aquí se mostrarán los errores al rellenar el formulario */}
+            <div
+                className='text-danger'>
+                <ul
+                    className='list-group'>
+                    Errores
+                </ul>
+            </div>
+            <button
+                type="submit"
+                className='btn btn-dark form-control sm mt-3'>
+                Guardar receta
+            </button>
         </form>
         
       </Modal>
