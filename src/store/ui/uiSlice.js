@@ -1,15 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Slice que se ocupará de abrir y cerrar la ventana modal
+// Slice que se ocupará de abrir y cerrar las ventanas modales
 export const uiSlice = createSlice({
     name: 'ui',
     initialState: {
-        modalIsOpen: false
+        formModalIsOpen: false,
+        recipeModalIsOpen: false
     },
     reducers: {
-        onOpenModal: (state) => {state.modalIsOpen=true},
-        onCloseModal: (state) => {state.modalIsOpen=false}
+        // Modal que contiene el formulario
+        onOpenFormModal: (state) => {state.formModalIsOpen=true},
+        onCloseFormModal: (state) => {state.formModalIsOpen=false},
+        // Modal que contiene los detalles de la receta
+        onOpenRecipeModal: (state) => {state.recipeModalIsOpen=true},
+        onCloseRecipeModal: (state) => {state.recipeModalIsOpen=false}
     }
 })
 
-export const {onOpenModal, onCloseModal} = uiSlice.actions
+export const {
+    onOpenFormModal, 
+    onCloseFormModal, 
+    onOpenRecipeModal, 
+    onCloseRecipeModal
+} = uiSlice.actions

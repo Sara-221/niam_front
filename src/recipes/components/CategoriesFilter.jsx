@@ -15,28 +15,28 @@ export const CategoriesFilter = () => {
               Todas las recetas
           </NavLink>
           <NavLink 
-            to={'desayunos'} 
+            to={'/desayunos'} 
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Desayunos
           </NavLink>
           <NavLink 
-            to={'aperitivos'} 
+            to={'/aperitivos'} 
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Aperitivos
           </NavLink>
-          <NavLink to={'ensaladas'} 
+          <NavLink to={'/ensaladas'} 
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Ensaladas
           </NavLink>
-          <NavLink to={'sopas-y-cremas'} 
+          <NavLink to={'/sopas-y-cremas'} 
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Sopas y cremas
             </NavLink>
-          <NavLink to={'principales'}
+          <NavLink to={'/principales'}
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Principales
             </NavLink>
-          <NavLink to={'postres'} 
+          <NavLink to={'/postres'} 
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Postres
             </NavLink>

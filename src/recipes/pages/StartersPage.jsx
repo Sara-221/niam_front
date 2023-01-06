@@ -1,6 +1,7 @@
 import { BtnAddRecipe, CategoriesFilter, FormModal, Navbar, RecipesGallery } from "../components"
 
 export const StartersPage = () => {
+
   return (
     <>
 

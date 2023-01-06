@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { LoginPage } from '../auth/pages/LoginPage'
-import { RecipesPage } from '../recipes/pages/RecipesPage'
-import { StartersPage } from '../recipes/pages/StartersPage'
+import { BreakfastPage, DessertsPage, MainsPage, RecipesPage, SaladsPage, SoupsPage, StartersPage } from '../recipes/pages'
 
 export const AppRouter = () => {
 
@@ -12,13 +11,21 @@ export const AppRouter = () => {
     <Routes>
 
       {
-        authStatus==='not-authenticated' ? <Route path='/auth/*' element={<LoginPage/>}/> : <Route path='/*' element={<RecipesPage/>}/>
+        authStatus==='not-authenticated' ? <Route path='/auth/*' element={<LoginPage/>}/> 
+          : <Route>
+              <Route path='/desayunos' element={<BreakfastPage/>}/>
+              <Route path='/aperitivos' element={<StartersPage/>}/>
+              <Route path='/ensaladas' element={<SaladsPage/>}/>
+              <Route path='/sopas-y-cremas' element={<SoupsPage/>}/>
+              <Route path='/principales' element={<MainsPage/>}/>
+              <Route path='/postres' element={<DessertsPage/>}/>
+              <Route path='/recipe/*' element={<RecipesPage/>}/>
+              <Route path='/*' element={<RecipesPage/>}/>
+            </Route>
       }
       <Route path='/*' element={<Navigate to='auth/login'/>}/>
-      {/* <Route path='/aperitivos' element={<StartersPage/>}/> */}
 
     </Routes>
     </>
   )
 }
-

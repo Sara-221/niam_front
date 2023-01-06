@@ -20,7 +20,7 @@ const customStyles = {
 export const FormModal = () => {
     
     // Desestructuramos del store los estados y acciones que necesitamos utilizar en este componente:
-    const {modalIsOpen, closeModal} = useUiStore()
+    const {formModalIsOpen, closeFormModal} = useUiStore()
 
     // Declaración temporal de los valores introducidos en formulario de receta:
     const [formValues, setFormValues] = useState({
@@ -58,14 +58,14 @@ export const FormModal = () => {
         // Guardar los valores introducidos por el usuario
 
         // Cerrar la ventana modal
-        closeModal()
+        closeFormModal()
     }
 
   return (
     <>
         <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
+            isOpen={formModalIsOpen}
+            onRequestClose={closeFormModal}
             style={customStyles}
         >
         
