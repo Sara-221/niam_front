@@ -3,8 +3,8 @@ import { useUiStore } from "../hooks/useUiStore"
 
 export const BtnAddRecipe = () => {
 
-    // Desestructuramos las acciones que nos interesan del store:
-    const {formModalIsOpen, openFormModal} = useUiStore()  
+    // Nos traemos el estado de las modales desde el store:
+    const {formModalIsOpen, openFormModal, recipeModalIsOpen } = useUiStore()  
     
     // Función encargada de añadir la receta al hacer click en botón "añadir"
     const handleNewRecipe=()=>{
@@ -21,11 +21,12 @@ export const BtnAddRecipe = () => {
             // Le asignamos la clase "display none" si la modal está abierta, para que en dicho caso el botón no aparezca superpuesto.
                 className={
                     `btn btn-dark mb-4 mx-5
-                    ${formModalIsOpen ? 'dNone' : ''}
+                    ${formModalIsOpen || recipeModalIsOpen ? 'dNone' : ''}
                     `
                 }
                 onClick={handleNewRecipe}>
-                &#43; Añadir una receta
+                    <i className="fa-solid fa-plus"></i>
+                &nbsp; Añadir una receta
             </button>
         </div>
     </>

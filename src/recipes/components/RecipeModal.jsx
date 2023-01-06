@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
 import { useUiStore } from '../hooks/useUiStore';
+import { BtnDeleteRecipe, BtnEditRecipe } from './';
 
 import './FormModal.css'
 
@@ -55,12 +56,12 @@ export const RecipeModal = ({recipe}) => {
                     <h4 className='me-2'>Enlace: </h4>
                     <h6>{url}</h6>
                 </div>
-                <div className='d-flex align-items-center'>
+                <div className='d-flex flex-column'>
                     <h4 className='me-2'>Ingredientes: </h4>
                     <h6>{ingredients}</h6>
                 </div>
-                <div className='d-flex align-items-center'>
-                    <h4 className='me-2'>Elaboración: </h4>
+                <div className='d-flex flex-column'>
+                    <h4 className='me-2'>Elaboración:</h4>
                     <h6>{method}</h6>
                 </div>
             </div>
@@ -70,7 +71,11 @@ export const RecipeModal = ({recipe}) => {
             </div>
         </div>
 
-
+    <div className='d-flex fixed-bottom justify-content-end'>
+        <BtnDeleteRecipe/>
+        <BtnEditRecipe/>
+    </div>
+    
     </main>
     
     

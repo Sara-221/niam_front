@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
+import { validateForm } from '../helpers/validateForm';
 import { useUiStore } from '../hooks/useUiStore';
 
 // Estilos de la modal, como descritos en la documentación de react-modal
@@ -53,13 +54,14 @@ export const FormModal = () => {
         setErrors([])
 
         // Validación del formulario
-
+        setErrors([validateForm(formValues)[0]])
 
         // Guardar los valores introducidos por el usuario
 
         // Cerrar la ventana modal
-        closeFormModal()
+        // closeFormModal()
     }
+    
 
   return (
     <>
@@ -146,7 +148,9 @@ export const FormModal = () => {
                 className='text-danger'>
                 <ul
                     className='list-group'>
-                    Errores
+                    {
+                        errors.map(err=>(<li key={err}>{err}</li>))
+                    }
                 </ul>
             </div>
             <button

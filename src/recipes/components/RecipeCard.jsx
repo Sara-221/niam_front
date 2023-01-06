@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useRecipesStore, useUiStore } from '../hooks'
-import { DetailsRecipePage } from '../pages'
 import { RecipeModal } from './RecipeModal'
 
 // Mostramos los elementos principales de la receta en cards

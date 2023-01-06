@@ -1,7 +1,20 @@
 import React from 'react'
 
 export const BtnEditRecipe = () => {
+
+  const handleEditRecipe=()=>{
+
+  }
+
   return (
-    <div>BtnEditRecipe</div>
+    <>
+      
+        <button 
+          className='btn btn-dark mb-4 me-5'
+          onClick={handleEditRecipe}>
+            <i className="fa-solid fa-pen"></i>
+              &nbsp; Editar
+        </button>
+    </>
   )
 }
