@@ -44,7 +44,7 @@ const tmpRecipeList = [
 
 ]
 
-//   En este slice definimos el estado inicial del recetario (array vacío y ninguna receta activa) y los reducers que necesitaremos para añadir, editar, ver o eliminar las recetas.
+//   En este slice definimos el estado inicial del recetario (array vacío y ninguna receta seleccionada) y los reducers que necesitaremos para añadir, editar, ver o eliminar las recetas.
 export const recipesSlice = createSlice({
     name: 'recipes',
     initialState: {

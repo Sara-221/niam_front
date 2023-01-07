@@ -21,7 +21,6 @@ export const validateForm = (tmpInput) => {
     const validCategories = ['aperitivo', 'desayuno', 'ensalada', 'principal', 'sopa', 'postre']
 
     // Debe tener título
-    console.log(tmpInput.name.trim().length)
     objVal.name= (tmpInput.name.trim().length>0) ? true:false
     // Debe introducirse la categoría
     objVal.category= validCategories.includes((tmpInput).category)
@@ -32,17 +31,13 @@ export const validateForm = (tmpInput) => {
     objVal.method= (tmpInput.method.trim().length>0) ? true:false
 
     if(objVal.name === false) {
-        errors.push('Escribe el nombre de la receta')
+        errors.push('El nombre de la receta es obligatorio.')
     }else if(objVal.category===false) {
         errors.push('Categoría no válida.')
     }else if(objVal.link===false && (objVal.ingredients && objVal.method === false)){
         errors.push('Debes escribir los ingredientes e instrucciones de la receta, o bien el enlace a la receta original.')
     }
     return errors
-
-    // if(objVal.values.contains(0)){
-    //     setErrors((er)=>[...er,'El nombre del evento es obligatorio'])
-    // }
 
   }
   

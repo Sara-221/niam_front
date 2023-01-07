@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { onCloseFormModal, onOpenFormModal, onOpenRecipeModal, onCloseRecipeModal } from "../../store/ui"
 
+// En este hook despachamos las acciones del reducer de uiSlice.
 export const useUiStore = () => {
 
     // Nos traemos los estados del Redux que luego necesitaremos utilizar en los componentes de interfaz de react

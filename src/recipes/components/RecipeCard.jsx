@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useRecipesStore, useUiStore } from '../hooks'
 import { RecipeModal } from './RecipeModal'
@@ -12,10 +12,12 @@ export const RecipeCard = ({recipe}) => {
   const iconURL = `/img/categories/${category}.png`
 
   const {openRecipeModal} = useUiStore()
-  const {setActiveRecipe} = useRecipesStore()
+  const {activeRecipe, setActiveRecipe} = useRecipesStore()
 
-  const handleClick = (id) => {
-    setActiveRecipe(id)
+  const handleClick = (selRecipe) => {
+    // Seleccionar la receta en la que se ha hecho click
+    setActiveRecipe(selRecipe)
+    // Abrir modal para ver detalles de receta/editar o eliminar.
     openRecipeModal()
   }
 
@@ -23,11 +25,9 @@ export const RecipeCard = ({recipe}) => {
     <>
     <article 
       className='d-grid mt-2'>
-        {/* Utilizamos el id de la receta para identificar de cuál queremos los detalles */}
-        {/* <Link style={{textDecoration: 'none'}} to = {`/recipe/${id}`}> */}
           <div 
             className='card flex-row mb-3 align-items-center'
-            onClick={(ev,id)=>handleClick(_id)}>
+            onClick={(ev,id)=>handleClick(recipe)}>
               <img src={iconURL} alt={category} className="card-img-left h-md-75 px-2" />
               <div className='card-body'>
                 <h5>{name}</h5>
@@ -38,7 +38,10 @@ export const RecipeCard = ({recipe}) => {
         {/* </Link> */}
     </article>
     {/* Al hacer click, abrimos la modal con los detalles de la receta seleccionada */}
-    <RecipeModal recipe={recipe}/>
+    {
+      (activeRecipe!==null) ? <RecipeModal recipe={activeRecipe}/> : ''
+    }
+    
     </>
   )
 }

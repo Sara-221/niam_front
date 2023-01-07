@@ -55,6 +55,11 @@ p, span, label, ul {
     font-family: var(--peso-parrafo);
 }
 
+li {
+    padding: 16px 4px 0px;
+    list-style: none;
+}
+
 
 /* Reglas recursivas */
 .colorFondo {

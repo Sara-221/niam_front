@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { onAddRecipe, onDeleteRecipe, onEditRecipe, onSetActiveRecipe } from "../../store/recipes/recipesSlice"
 
-
+// En este hook despachamos las acciones del reducer de recipesSlice.
 export const useRecipesStore = () => {
 
     // Importamos del store los reducer

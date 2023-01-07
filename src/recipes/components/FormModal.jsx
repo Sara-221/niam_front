@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { validateForm } from '../helpers/validateForm';
+import { useRecipesStore } from '../hooks/useRecipesStore';
 import { useUiStore } from '../hooks/useUiStore';
 
 // Estilos de la modal, como descritos en la documentación de react-modal
@@ -22,6 +23,7 @@ export const FormModal = () => {
     
     // Desestructuramos del store los estados y acciones que necesitamos utilizar en este componente:
     const {formModalIsOpen, closeFormModal} = useUiStore()
+    const {activeRecipe, startSavingRecipe} = useRecipesStore()
 
     // Declaración temporal de los valores introducidos en formulario de receta:
     const [formValues, setFormValues] = useState({
@@ -33,6 +35,15 @@ export const FormModal = () => {
         method: '',
         notes: ''
     })
+
+    // En caso de que se haya seleccionado una receta, rellenamos el formulario con los datos que le correspondan.
+    useEffect(()=>{
+        if(activeRecipe!==null){
+            setFormValues({
+                ...activeRecipe
+            })
+        }
+    },[activeRecipe])
 
     // Declaramos un array, inicialmente vacío, que acumulará y mostrará los errores resultantes de la validación
     const [errors, setErrors] = useState([])
@@ -57,11 +68,12 @@ export const FormModal = () => {
         setErrors([validateForm(formValues)[0]])
 
         // Guardar los valores introducidos por el usuario
-
-        // Cerrar la ventana modal
-        // closeFormModal()
+        if(validateForm(formValues).length===0){
+            startSavingRecipe(formValues)
+            // Cerrar la ventana modal
+            closeFormModal()
+        }
     }
-    
 
   return (
     <>
@@ -146,10 +158,11 @@ export const FormModal = () => {
             {/* Aquí se mostrarán los errores al rellenar el formulario */}
             <div
                 className='text-danger'>
+                    {/* Nota: asignamos como key un valor aleatorio a cada uno de los items, para que no nos aparezca el warning al repetirse el error */}
                 <ul
                     className='list-group'>
                     {
-                        errors.map(err=>(<li key={err}>{err}</li>))
+                        errors.map(err=>(<li key={Math.floor(Math.random()*10)}> <i className="fa-solid fa-xmark"></i> {err}</li>))
                     }
                 </ul>
             </div>
