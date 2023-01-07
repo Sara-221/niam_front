@@ -12,10 +12,6 @@ export const RecipesGallery = ({category}) => {
   const categories = ['aperitivo', 'desayuno', 'ensalada', 'principal', 'sopa', 'postre']
   // En caso contrario, se muestran todas las recetas.
 
-  const handleClick = (event, key) => {
-    console.log('key index', key)
-  }
-
   return (
     <>
     {/* Pintamos las cards con cada una de las recetas guardadas */}

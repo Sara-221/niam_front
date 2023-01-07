@@ -112,3 +112,15 @@ li {
     border: 3px solid #DAE6F9;
     border-radius: 5px;
 }
+
+/* Pagina 404 */
+.fondo404 {
+    width: 50vw;
+    height: 25vh;
+    margin: auto;
+    padding-bottom: 24px;
+    background-image: url('https://img.freepik.com/free-vector/casserole-pot_1284-11444.jpg?w=1060&t=st=1673112511~exp=1673113111~hmac=609818c93e82fd1b0c8410aa9466ab96be58824fdf228bd97dea43345b8f24a4');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}

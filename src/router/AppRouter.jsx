@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { LoginPage } from '../auth/pages/LoginPage'
-import { BreakfastPage, DessertsPage, MainsPage, RecipesPage, SaladsPage, SoupsPage, StartersPage } from '../recipes/pages'
+import { BreakfastPage, DessertsPage, Error404, MainsPage, RecipesPage, SaladsPage, SoupsPage, StartersPage } from '../recipes/pages'
 
 export const AppRouter = () => {
 
@@ -19,8 +19,8 @@ export const AppRouter = () => {
               <Route path='/sopas-y-cremas' element={<SoupsPage/>}/>
               <Route path='/principales' element={<MainsPage/>}/>
               <Route path='/postres' element={<DessertsPage/>}/>
-              <Route path='/recipe/*' element={<RecipesPage/>}/>
-              <Route path='/*' element={<RecipesPage/>}/>
+              <Route path='/' element={<RecipesPage/>}/>
+              <Route path='/*' element={<Error404/>}/>
             </Route>
       }
       <Route path='/*' element={<Navigate to='auth/login'/>}/>

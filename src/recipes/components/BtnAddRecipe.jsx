@@ -10,7 +10,7 @@ export const BtnAddRecipe = () => {
     const handleNewRecipe=()=>{
         
         // Abrir la modal
-        openFormModal()
+        openFormModal('addRecipe')
     }
 
   return (

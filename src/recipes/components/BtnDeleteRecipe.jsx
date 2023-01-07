@@ -10,7 +10,10 @@ export const BtnDeleteRecipe = () => {
   const {closeRecipeModal} = useUiStore()
 
   const handleDeleteRecipe=()=>{
-      startDeletingRecipe()
+      // Confirmación del usuario para eliminar
+      let confirmDelete = "¿Seguro que quieres eliminar esta receta?"
+      if(confirm(confirmDelete)==true) startDeletingRecipe()
+      
       // Cerrar ventana
       closeRecipeModal()
   }

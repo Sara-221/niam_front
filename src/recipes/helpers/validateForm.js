@@ -25,7 +25,8 @@ export const validateForm = (tmpInput) => {
     // Debe introducirse la categoría
     objVal.category= validCategories.includes((tmpInput).category)
     // Se comprueba si el usuario ha introducido el enlace a una receta existente
-    objVal.link= (tmpInput.link.trim().length>0) ? true:false
+    if(typeof tmpInput.link !=='undefined'){
+        objVal.link= (tmpInput.link.trim().length>0) ? true:false}
     // Lo mismo para las instrucciones e ingredientes:
     objVal.ingredients= (tmpInput.ingredients.trim().length>=0) ? true:false
     objVal.method= (tmpInput.method.trim().length>0) ? true:false

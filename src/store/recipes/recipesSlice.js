@@ -63,7 +63,7 @@ export const recipesSlice = createSlice({
             state.allRecipes = state.allRecipes.map(recipe=>{
                 if(recipe._id===payload._id){
                     return payload
-                }
+                }return recipe
             })
         },
 

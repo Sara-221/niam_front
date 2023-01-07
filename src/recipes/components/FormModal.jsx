@@ -83,7 +83,7 @@ export const FormModal = () => {
             style={customStyles}
         >
         
-        <h2 className='px-2'>Añadir receta</h2>
+        <h2 className='px-2'>Añadir o Editar receta</h2>
         <form 
             onSubmit={handleSubmit}
             className='form-group px-2'
