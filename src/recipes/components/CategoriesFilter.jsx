@@ -1,12 +1,10 @@
-import React from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 
 export const CategoriesFilter = () => {
 
-  const navigate=useNavigate();
 
   return (
-    <aside className='p-2 p-sm-5'>
+    <aside className='p-2 py-sm-3'>
         <h4>Categorías</h4>
         <nav className='list-group'>
           {/* En la siguiente lista, asignamos de forma condicional la clase de CSS "activeCategory", dependiendo de si la categoría ha sido seleccionada o no por el usuario */}
@@ -37,7 +35,7 @@ export const CategoriesFilter = () => {
               Principales
             </NavLink>
           <NavLink to={'/postres'} 
-            className={({isActive})=> `list-group-item pb-1 ${isActive ? 'activeCategory' : 'border-0'}`}>
+            className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Postres
             </NavLink>
         </nav>

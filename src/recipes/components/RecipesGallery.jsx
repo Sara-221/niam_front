@@ -16,7 +16,7 @@ export const RecipesGallery = ({category}) => {
     <>
     {/* Pintamos las cards con cada una de las recetas guardadas */}
     <div 
-      className='row row-cols-sm-2 pe-5 pb-5'>
+      className='row row-cols-sm-2 pe-5'>
       {
         (categories.includes(category)) ? 
           (getRecipeByCategory(category).map(rec=>(<RecipeCard key={rec._id} recipe={rec} />))) : 

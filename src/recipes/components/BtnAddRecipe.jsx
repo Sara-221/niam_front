@@ -16,11 +16,11 @@ export const BtnAddRecipe = () => {
   return (
 
     <>
-        <div className='d-grid fixed-bottom justify-content-end pb-3'>
+        <div className='d-grid sticky-bottom justify-content-end pb-3'>
             <button 
             // Le asignamos la clase "display none" si la modal está abierta, para que en dicho caso el botón no aparezca superpuesto.
                 className={
-                    `btn btn-dark mb-5 me-2
+                    `btn btn-dark mb-5 me-sm-2
                     ${formModalIsOpen || recipeModalIsOpen ? 'dNone' : ''}
                     `
                 }

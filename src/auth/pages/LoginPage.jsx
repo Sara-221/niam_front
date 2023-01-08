@@ -3,12 +3,12 @@ import './loginPage.css'
 export const LoginPage = () => {
   return (
     <>
-    <div className="row p-5 colorFondo pagCompleta">
+    <div className="d-flex flex-column flex-sm-row justify-content-center align-items-center py-1 px-5 py-sm-5 colorFondo pagCompleta">
       {/* Ilustarción de la página de inicio de sesión */}
-      <div className='loginBg col-5'></div>
+      <div className='loginBg'></div>
       {/* Formulario de inicio de sesión */}
-      <div className='col-5 mt-4'>
-        <form className='mt-5' autoComplete='off'>
+      <div className='w-100 px-sm-5'>
+        <form className='mt-sm-5 mx-sm-5' autoComplete='off'>
           <label>Correo Electrónico</label>
           <div className='input-group'>
             <input 
