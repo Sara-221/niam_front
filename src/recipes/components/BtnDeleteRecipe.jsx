@@ -22,7 +22,7 @@ export const BtnDeleteRecipe = () => {
 
     <>
         <button 
-          className='btn btn-outline-dark mb-4 me-2'
+          className='btn btn-outline-dark mb-5 me-2'
           onClick={handleDeleteRecipe}>
             <i className="fa-solid fa-trash-can"></i>
               &nbsp; Eliminar

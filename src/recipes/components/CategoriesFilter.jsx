@@ -37,7 +37,7 @@ export const CategoriesFilter = () => {
               Principales
             </NavLink>
           <NavLink to={'/postres'} 
-            className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
+            className={({isActive})=> `list-group-item pb-1 ${isActive ? 'activeCategory' : 'border-0'}`}>
               Postres
             </NavLink>
         </nav>

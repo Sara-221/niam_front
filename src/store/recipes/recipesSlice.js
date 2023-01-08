@@ -5,7 +5,7 @@ const tmpRecipeList = [
       name: 'nombre de la receta 1',
       category: 'aperitivo',
       time: 'x min',
-      url: 'link de la receta',
+      url: 'https://www.google.com/',
       ingredients: 'lista de ingredientes',
       method: 'instrucciones',
       notes: '',

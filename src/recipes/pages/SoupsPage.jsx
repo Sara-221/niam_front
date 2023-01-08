@@ -28,7 +28,7 @@ export const SoupsPage = () => {
     </div>
 
     {/* Pie de Página */}
-    <footer className='text-center py-3 colorFondo'>
+    <footer className='text-center py-3 fixed-bottom colorFondo'>
         <i className="fa-regular fa-copyright"></i>
         <span>&nbsp; 2023 | Ñam Ñam</span>
     </footer>

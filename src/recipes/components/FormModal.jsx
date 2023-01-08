@@ -7,12 +7,12 @@ import { useUiStore } from '../hooks/useUiStore';
 // Estilos de la modal, como descritos en la documentación de react-modal
 const customStyles = {
     content: {
-      top: '50%',
-      left: '50%',
+      top: '0%',
+      left: '0%',
       right: 'auto',
       bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
+      marginLeft: '0%',
+      transform: 'translate(8%, 8%)',
     },
   };
 
@@ -81,6 +81,7 @@ export const FormModal = () => {
             isOpen={formModalIsOpen}
             onRequestClose={closeFormModal}
             style={customStyles}
+            className="modalForm"
         >
         
         <h2 className='px-2'>Añadir o Editar receta</h2>

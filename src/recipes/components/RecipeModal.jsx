@@ -8,12 +8,12 @@ import './FormModal.css'
 // Estilos de la modal, como descritos en la documentación de react-modal
 const customStyles = {
     content: {
-      top: '50%',
-      left: '50%',
+      top: '0%',
+      left: '0%',
       right: 'auto',
       bottom: 'auto',
       marginRight: '0%',
-      transform: 'translate(-50%, -50%)',
+      transform: 'translate(10%, 10%)',
     },
   };
 
@@ -35,7 +35,7 @@ export const RecipeModal = ({recipe}) => {
         isOpen={recipeModalIsOpen}
         onRequestClose={closeRecipeModal}
         style={customStyles}
-        className="modal"
+        className="modalRecipe"
     >
     
     <main className='d-grid'>
@@ -46,21 +46,21 @@ export const RecipeModal = ({recipe}) => {
                 <h5 className='h6'>{category}</h5>
             </div>
         </div>
-        <div className='d-flex justify-content-between pe-3'>
+        <div className='d-sm-flex justify-content-between pe-3'>
             <div>
-                <div className='d-flex align-items-center'>
+                <div className='d-sm-flex align-items-center'>
                     <h4 className='me-2'>Tiempo de preparación: </h4>
                     <h6>{time}</h6>
                 </div>
-                <div className='d-flex align-items-center'>
+                <div className='d-sm-flex align-items-center'>
                     <h4 className='me-2'>Enlace: </h4>
-                    <h6>{url}</h6>
+                    <h6><a className='text-lowercase text-decoration-none' href={url}>{url}</a></h6>
                 </div>
-                <div className='d-flex flex-column'>
+                <div className='d-sm-flex flex-column'>
                     <h4 className='me-2'>Ingredientes: </h4>
                     <h6>{ingredients}</h6>
                 </div>
-                <div className='d-flex flex-column'>
+                <div className='d-sm-flex flex-column'>
                     <h4 className='me-2'>Elaboración:</h4>
                     <h6>{method}</h6>
                 </div>
@@ -71,7 +71,7 @@ export const RecipeModal = ({recipe}) => {
             </div>
         </div>
 
-    <div className='d-flex fixed-bottom justify-content-end'>
+    <div className='d-flex fixed-bottom justify-content-end btnPos'>
         <BtnDeleteRecipe/>
         <BtnEditRecipe/>
     </div>
