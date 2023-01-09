@@ -38,6 +38,7 @@ export const RecipeModal = ({recipe}) => {
         className="modalRecipe"
     >
     
+    {/* Sección principal */}
     <main className='d-grid'>
         <div className='d-flex align-items-start'>
             <img src={iconURL} alt={`icono ${category}`} />

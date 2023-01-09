@@ -29,7 +29,7 @@ export const FormModal = () => {
     const [formValues, setFormValues] = useState({
         name: '',
         category: '',
-        link: '',
+        url: '',
         time: '',
         ingredients:'',
         method: '',
@@ -61,18 +61,18 @@ export const FormModal = () => {
         // Impedir que se recargue la página al enviar el formulario
         ev.preventDefault()
 
-        // Reseteamos los errores
-        setErrors([])
-
         // Validación del formulario
         setErrors([validateForm(formValues)[0]])
 
         // Guardar los valores introducidos por el usuario
         if(validateForm(formValues).length===0){
+            // Reseteamos los errores
+            setErrors([])
             startSavingRecipe(formValues)
             // Cerrar la ventana modal
             closeFormModal()
         }
+
     }
 
   return (
@@ -97,7 +97,7 @@ export const FormModal = () => {
                 onChange={handleInputChange}
                 className='form-control my-1' />
             <div className='row d-flex align-items-center justify-content-start my-3'>
-                <div className='col-3'>
+                <div className='col-sm-3'>
                     <label>Categoría</label>
                     <select 
                         name='category'
@@ -117,8 +117,8 @@ export const FormModal = () => {
                     <label>Enlace a la receta</label>
                     <input 
                         type="text"
-                        name='link' 
-                        value={formValues.link}
+                        name='url' 
+                        value={formValues.url}
                         onChange={handleInputChange}
                         className='form-control'/>
                 </div>

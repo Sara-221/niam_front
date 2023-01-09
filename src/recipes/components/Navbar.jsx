@@ -1,13 +1,18 @@
 import { useNavigate } from "react-router-dom"
+import { useAuthStore } from "../../auth/hooks"
 
 
 export const Navbar = () => {
 
   const navigate = useNavigate()
+  const {startLogout} = useAuthStore()
 
   //Cierre de sesión sin posibilidad de volver atrás en el historial
   const handleLogOut=()=>{
-    navigate('./logout', {
+    // Cerrar sesión
+    startLogout()
+    // Volver a la página de login
+    navigate('/logout', {
       replace:true
     })
   }
