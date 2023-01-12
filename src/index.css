@@ -1,6 +1,25 @@
 /* Google fonts (tipografía) */
 @import url('https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Open+Sans:wght@400;500;600;700&display=swap');
 
+/* Animación de rotación (utilizada en cargando) */
+@keyframes rotate {
+    0% {
+      transform: rotate3d(0, 0, 1, 0deg);
+    }
+    25% {
+      transform: rotate3d(0, 0, 1, 90deg);
+    }
+    50% {
+      transform: rotate3d(0, 0, 1, 180deg);
+    }
+    75% {
+      transform: rotate3d(0, 0, 1, 270deg);
+    }
+    100% {
+      transform: rotate3d(0, 0, 1, 360deg);
+    }
+  }
+
 /* Declaración de Variables */
 :root {
     /* Colores */
@@ -35,7 +54,7 @@ h3 {
     font-weight: var(--peso-subtitulo);
 }
 
-h5, h6, a {
+h5, h6, pre, a {
     font-family: var(--fuente-parrafo);
     text-transform: capitalize;
     color: var(--color-titulo);
@@ -73,6 +92,14 @@ li {
     height: 5px;
     margin-left: 16px;
     background-color: var(--color-fondo);
+}
+
+.card {
+    cursor: pointer;
+}
+
+.card:hover {
+    filter: drop-shadow(4px 4px 5px #3D495C);
 }
 
 .dNone {
@@ -138,4 +165,18 @@ li {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50%;
+}
+
+/* Cargando */
+.cargando {
+    width: 150px;
+    height: 150px;
+    margin: calc(50vh - 75px) auto;
+    background-image: url('../public/img/cargando.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.rotacion {
+    animation: rotate 5s normal linear infinite;
 }

@@ -8,33 +8,33 @@ export const CategoriesFilter = () => {
         <h4>Categorías</h4>
         <nav className='list-group'>
           {/* En la siguiente lista, asignamos de forma condicional la clase de CSS "activeCategory", dependiendo de si la categoría ha sido seleccionada o no por el usuario */}
-          <NavLink to={'/'} 
+          <NavLink to={'/recetas/'} 
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Todas las recetas
           </NavLink>
           <NavLink 
-            to={'/desayunos'} 
+            to={'/recetas/desayunos'} 
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Desayunos
           </NavLink>
           <NavLink 
-            to={'/aperitivos'} 
+            to={'/recetas/aperitivos'} 
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Aperitivos
           </NavLink>
-          <NavLink to={'/ensaladas'} 
+          <NavLink to={'/recetas/ensaladas'} 
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Ensaladas
           </NavLink>
-          <NavLink to={'/sopas-y-cremas'} 
+          <NavLink to={'/recetas/sopas-y-cremas'} 
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Sopas y cremas
             </NavLink>
-          <NavLink to={'/principales'}
+          <NavLink to={'/recetas/principales'}
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Principales
             </NavLink>
-          <NavLink to={'/postres'} 
+          <NavLink to={'/recetas/postres'} 
             className={({isActive})=> `list-group-item ${isActive ? 'activeCategory' : 'border-0'}`}>
               Postres
             </NavLink>

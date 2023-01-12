@@ -26,6 +26,7 @@ export const RecipeCard = ({recipe}) => {
     <article 
       className='d-grid mt-2'>
           <div 
+          // Se añade la clase btn de bootstrap para que aparezca el cursor "pointer" en las cards.
             className='card flex-row mb-3 align-items-center'
             onClick={(ev,id)=>handleClick(recipe)}>
               <img src={iconURL} alt={category} className="card-img-left h-md-75 px-2" />

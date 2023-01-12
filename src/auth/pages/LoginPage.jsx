@@ -38,13 +38,13 @@ export const LoginPage = () => {
       setErrors(...errors, 'Has olvidado escribir tu e-mail o tu contraseña.')
     }
 
-    // Enviar los datos
+    // Enviar los datos haciendo uso del store
     startLogin(loginData)
 
     // Limpiar el formulario al enviar los datos
     setLoginData({
       email: '',
-      password: ''
+      password: '',
     })
   }
 
@@ -56,7 +56,7 @@ export const LoginPage = () => {
       <div className='loginBg'></div>
       {/* Formulario de inicio de sesión */}
       <div className='w-100 px-sm-5'>
-        <form className='mt-sm-5 mx-sm-5' onSubmit={loginSubmit} autoComplete='off'>
+        <form className='mt-sm-5 mx-sm-5' onSubmit={loginSubmit}>
           <label>Correo Electrónico</label>
           <div className='input-group'>
             <input 

@@ -57,18 +57,19 @@ export const RecipeModal = ({recipe}) => {
                     <h4 className='me-2'>Enlace: </h4>
                     <h6><a className='text-lowercase text-decoration-none' href={url}>{url}</a></h6>
                 </div>
+                {/* Usamos la etiqueta de html <pre> para que se conserven los saltos de línea y espacios introducidos por el usuario  */}
                 <div className='d-sm-flex flex-column'>
                     <h4 className='me-2'>Ingredientes: </h4>
-                    <h6>{ingredients}</h6>
+                    <pre>{ingredients}</pre>
                 </div>
                 <div className='d-sm-flex flex-column'>
                     <h4 className='me-2'>Elaboración:</h4>
-                    <h6>{method}</h6>
+                    <pre>{method}</pre>
                 </div>
             </div>
             <div className='notas'>
                 <h4>Mis Notas</h4>
-                <h6>{notes}</h6>
+                <pre>{notes}</pre>
             </div>
         </div>
 

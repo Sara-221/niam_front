@@ -5,14 +5,14 @@ import { useAuthStore } from "../../auth/hooks"
 export const Navbar = () => {
 
   const navigate = useNavigate()
-  const {startLogout} = useAuthStore()
+  const {startLogout, user} = useAuthStore()
 
   //Cierre de sesión sin posibilidad de volver atrás en el historial
   const handleLogOut=()=>{
     // Cerrar sesión
     startLogout()
     // Volver a la página de login
-    navigate('/logout', {
+    navigate('/auth/logout', {
       replace:true
     })
   }
@@ -20,7 +20,7 @@ export const Navbar = () => {
   return (
     <>
         <nav className="navbar navbar-light d-flex justify-content-between px-1 px-sm-5">
-            <a className="navbar-brand">Hola, <span>Usuario</span></a>
+            <a className="navbar-brand">Hola, <span>{user.name}</span></a>
                 <div>
                     <svg 
                         width="50" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">

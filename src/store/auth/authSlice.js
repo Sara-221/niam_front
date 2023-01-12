@@ -28,7 +28,7 @@ export const authSlice = createSlice({
             state.user={},
             state.errorMsg=payload
         },
-        // Resetear mensajes de error
+        // Resetear posibles mensajes de error
         clearErrorMsg: (state)=>{state.errorMsg=undefined}
     }
 })
