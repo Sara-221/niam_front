@@ -37,7 +37,7 @@ export const RecipesPage = () => {
     {/* Pie de Página */}
     <footer 
             className={
-                `text-center py-3 colorFondo ${formModalIsOpen ? '' : 'fixed-bottom'}` 
+                `text-center py-3 colorFondo ${formModalIsOpen | recipeModalIsOpen ? '' : 'fixed-bottom'}` 
             }
         >
         <i className="fa-regular fa-copyright"></i>

@@ -20,7 +20,7 @@ export const Navbar = () => {
   return (
     <>
         <nav className="navbar navbar-light d-flex justify-content-between px-1 px-sm-5">
-            <a className="navbar-brand">Hola, <span>{user.name}</span></a>
+            <a className="navbar-brand">Hola, chef!</a>
                 <div>
                     <svg 
                         width="50" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">

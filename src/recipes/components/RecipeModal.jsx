@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import { useUiStore } from '../hooks/useUiStore';
 import { BtnDeleteRecipe, BtnEditRecipe } from './';
 
-import './FormModal.css'
+import './modalStyle.css'
 
 // Estilos de la modal, como descritos en la documentación de react-modal
 const customStyles = {
@@ -40,6 +40,13 @@ export const RecipeModal = ({recipe}) => {
     
     {/* Sección principal */}
     <main className='d-grid'>
+        {/* Cerrar modal */}
+        <button
+            className='btn-close btnCerrar'
+            type='button'
+            onClick= {closeRecipeModal}>    
+        </button>
+        {/* Contenido de la modal */}
         <div className='d-flex align-items-start'>
             <img src={iconURL} alt={`icono ${category}`} />
             <div className='text-left mb-1'>
@@ -60,11 +67,11 @@ export const RecipeModal = ({recipe}) => {
                 {/* Usamos la etiqueta de html <pre> para que se conserven los saltos de línea y espacios introducidos por el usuario  */}
                 <div className='d-sm-flex flex-column'>
                     <h4 className='me-2'>Ingredientes: </h4>
-                    <pre>{ingredients}</pre>
+                    <pre className='ingredientes'>{ingredients}</pre>
                 </div>
                 <div className='d-sm-flex flex-column'>
-                    <h4 className='me-2'>Elaboración:</h4>
-                    <pre>{method}</pre>
+                    <h4>Elaboración:</h4>
+                    <p className='p-sm-2 overflow-auto elaboracion'>{method}</p>
                 </div>
             </div>
             <div className='notas'>

@@ -9,11 +9,12 @@ export const AppRouter = () => {
   // Para conectarse, comprobamos que el usuario esté autentificado y el token.
   const {status, checkToken} = useAuthStore()
 
-  // Ejecutamos la comprobación del token una sola vez
+  // Ejecutamos la comprobación del token una sola vez (al iniciar sesión)
   useEffect(() => {
     checkToken()
   }, [])
-  
+
+  // Se muestra una pantalla de cargando mientras se inicia sesión
   if(status==='checking'){
     return(
       <div className='container-fluid text-center'>
@@ -22,12 +23,10 @@ export const AppRouter = () => {
     )    
   }
 
-  console.log(status)
-
   return (
     <>
     <Routes>
-
+      {/* Ruta condicional dependiendo de si el usuario ha sido autentificado o on */}
       {
         (status==='not-authenticated') ? <Route path='/auth/*' element={<LoginPage/>}/> 
           : <Route path='/auth/*' element={<Navigate to='/recetas'/>}/>   

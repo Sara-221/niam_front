@@ -5,7 +5,7 @@ import './loginPage.css'
 export const LoginPage = () => {
 
   // Importamos del store las funciones que nos harán falta para loguearnos
-  const {startLogin,errorMsg} = useAuthStore()
+  const {startLogin, errorMsg} = useAuthStore()
 
   // Usamos el hook useState para actualizar los valores del formulario. Los incializamos como un objeto vacío.
   const [loginData, setLoginData] = useState({
@@ -36,12 +36,12 @@ export const LoginPage = () => {
     // Validar los datos
     if(loginData.email.trim().length<=0 || loginData.password.trim().length<=0){
       setErrors(...errors, 'Has olvidado escribir tu e-mail o tu contraseña.')
+    }else{
+      // Enviar los datos haciendo uso del store
+      startLogin(loginData)
     }
 
-    // Enviar los datos haciendo uso del store
-    startLogin(loginData)
-
-    // Limpiar el formulario al enviar los datos
+    // Limpiar el formulario cada vez que se envían los datos
     setLoginData({
       email: '',
       password: '',
@@ -93,7 +93,9 @@ export const LoginPage = () => {
             </span>
           </div>
           <div className='text-danger pb-2'>
-            <small>{errors}</small>
+            <small>{
+              (errorMsg !== undefined) ? errorMsg : errors
+              }</small>
           </div>
             <button
               type="submit"

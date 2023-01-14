@@ -83,6 +83,13 @@ export const FormModal = () => {
             style={customStyles}
             className="modalForm"
         >
+
+        {/* Cerrar modal */}
+        <button
+            className='btn-close btnCerrar'
+            type='button'
+            onClick= {closeFormModal}>    
+        </button>
         
         <h2 className='px-2'>Añadir o Editar receta</h2>
         <form 
