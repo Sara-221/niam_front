@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { useAuthStore } from '../hooks'
+
+import  PasswordMask  from 'react-password-mask'
+
 import './loginPage.css'
 
 export const LoginPage = () => {
@@ -77,7 +80,19 @@ export const LoginPage = () => {
           </div>
           <label>Contraseña</label>
           <div className='input-group'>
-            <input 
+          <PasswordMask
+            id="password"
+            name="password"
+            placeholder="Tu contraseña"
+            value={loginData.password}
+            onChange={handleLoginInputChange.bind()}
+            className='form-control mb-3'
+            inputClassName='border-0'
+            buttonClassName='bg-transparent mostrarContrasenia'
+            showButtonContent='mostrar'
+            hideButtonContent='ocultar'
+          />
+            {/* <input 
               type="password" 
               name="password"
               id="password"
@@ -85,7 +100,7 @@ export const LoginPage = () => {
               value={loginData.password}
               onChange={handleLoginInputChange}
               className='form-control mb-3'
-              />
+              /> */}
             <span className='input-group-text mb-3'>
               <i 
                 className="fa-solid fa-lock">

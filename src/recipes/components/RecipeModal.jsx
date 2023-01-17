@@ -67,7 +67,7 @@ export const RecipeModal = ({recipe}) => {
                 {/* Usamos la etiqueta de html <pre> para que se conserven los saltos de línea y espacios introducidos por el usuario  */}
                 <div className='d-sm-flex flex-column'>
                     <h4 className='me-2'>Ingredientes: </h4>
-                    <pre className='ingredientes'>{ingredients}</pre>
+                    <p className='ingredientes'>{ingredients}</p>
                 </div>
                 <div className='d-sm-flex flex-column'>
                     <h4>Elaboración:</h4>
@@ -76,11 +76,11 @@ export const RecipeModal = ({recipe}) => {
             </div>
             <div className='notas'>
                 <h4>Mis Notas</h4>
-                <pre>{notes}</pre>
+                <p>{notes}</p>
             </div>
         </div>
 
-    <div className='d-flex fixed-bottom justify-content-end btnPos'>
+    <div className='btnPos'>
         <BtnDeleteRecipe/>
         <BtnEditRecipe/>
     </div>

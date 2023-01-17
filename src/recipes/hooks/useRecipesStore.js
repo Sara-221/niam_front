@@ -1,13 +1,24 @@
+import Notiflix, { Notify } from "notiflix"
 import { useDispatch, useSelector } from "react-redux"
-import { useParams } from "react-router-dom"
 import recipesAPI from "../../api/recipesAPI"
-import { onLogout } from "../../store/auth"
 import { onAddRecipe, onDeleteRecipe, onEditRecipe, onLoadRecipes, onSetActiveRecipe } from "../../store/recipes/recipesSlice"
+
+// Configurar las opciones por defecto de Notiflix Notify
+Notiflix.Notify.init({
+    width: '100%',
+    position: 'left-top',
+    distance:'0px',
+    timeout: 5000,
+    fontFamily: 'Open Sans',
+    fontSize: '14px',
+    cssAnimationStyle: 'from-top',
+});
+
 
 // En este hook despachamos las acciones del reducer de recipesSlice.
 export const useRecipesStore = () => {
 
-    // Importamos del store los reducer
+    // Importamos del store los reducer que necesitamos
     const {allRecipes, activeRecipe} = useSelector((state)=>state.recipes)
     const dispatch = useDispatch()
 
@@ -25,13 +36,19 @@ export const useRecipesStore = () => {
                 // Editar la receta llamando a la API con el método put
                 const {data} = await recipesAPI.put(`/recipes/${selectedRecipe._id}`, selectedRecipe)
                 dispatch(onEditRecipe({...selectedRecipe}))
+                // Notificar al usuario
+                Notify.success("Receta actualizada.")
             }else{
                 // Llamada a la API utilizando el método post para añadir la nueva receta
                 const {data} = await recipesAPI.post('/recipes/', selectedRecipe)
                 // Añadimos la receta con el id asignado por la base de datos.
                 dispatch(onAddRecipe({_id:data.newRecipe._id,...selectedRecipe}))
+                // Notificar al usuario
+                Notify.success("Receta guardada.")
             }
         } catch (error) {
+            // Notificar al usuario de que ha habido error
+            Notify.failure("Error al guardar la receta. Introduce un enlace válido.")
             // Mostramos el error en la consola
             console.log(error)
         }
@@ -56,6 +73,7 @@ export const useRecipesStore = () => {
         try {
             await recipesAPI.delete(`/recipes/${activeRecipe._id}`)
             dispatch(onDeleteRecipe())
+            Notify.info("Receta eliminada.")
         } catch (error) {
             console.log(error)
         }

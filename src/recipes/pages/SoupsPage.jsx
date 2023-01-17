@@ -1,4 +1,5 @@
 import { BtnAddRecipe, CategoriesFilter, FormModal, Navbar, RecipesGallery } from "../components"
+import { Footer } from "../components/Footer"
 
 export const SoupsPage = () => {
   return (
@@ -28,10 +29,7 @@ export const SoupsPage = () => {
     </div>
 
     {/* Pie de Página */}
-    <footer className='text-center py-3 fixed-bottom colorFondo'>
-        <i className="fa-regular fa-copyright"></i>
-        <span>&nbsp; 2023 | Ñam Ñam</span>
-    </footer>
+    <Footer/>
     
     </>
   )

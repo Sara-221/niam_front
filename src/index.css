@@ -83,6 +83,10 @@ pre {
     text-transform: none;
 }
 
+main {
+    position: relative;
+    padding-bottom: 30px;
+}
 
 /* Reglas recursivas */
 .colorFondo {
@@ -114,12 +118,6 @@ pre {
     border-bottom: 5px solid var(--color-fondo)
 }
 
-.btnPos{
-    position: relative;
-    top: 24px;
-    right: 0px;
-}
-
 .btnCerrar {
     position: fixed;
     top: 1%;
@@ -138,19 +136,22 @@ pre {
 /* Reglas específicas modales */
 .modalForm, .modalRecipe {
     width:80vw;
-    max-height:100vh;
+    max-height:60vh;
     overflow-y: auto;
     margin: auto;
-    padding: 32px 24px 64px;
+    padding: 32px 24px 40px;
     background-color: white;
     border: 3px solid #DAE6F9;
     border-radius: 5px;
 }
 
 .notas {
-    width: 32vw;
-    max-height: 40vh;
-    overflow: auto;
+    width: 50vw;
+    max-height: 32vh;
+    white-space:pre-line;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
     margin-left: 24px;
     padding: 16px 8px;
     background-color: #DAE6F9;
@@ -159,14 +160,25 @@ pre {
 
 .ingredientes, .elaboracion {
     max-width: 450px;
-    max-height: 100px;
+    white-space: pre-wrap;
     border: 1px solid #3D495C;
     border-radius: 5px;
 }
 
+.ingredientes {
+    max-height: 100px;
+    overflow-y:auto;
+}
+
 .elaboracion {
     max-height: 250px;
-    white-space: pre-wrap;
+}
+
+.btnPos {
+    position: relative;
+    bottom:0px;
+    right: 0;
+    margin: 24px auto;
 }
 
 .modalRecipe{
@@ -209,5 +221,22 @@ pre {
 @media screen and (min-width: 768px) {
     .btnCerrar{
         top: 4%
+    }
+
+    .modalForm, .modalRecipe {
+        min-height: 85vh;
+    }
+
+    .notas {
+        width: 32vw;
+    }
+
+    .btnPos{
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        bottom: 0;
+        right: 0px;
+        margin: 0;
     }
 }

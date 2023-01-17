@@ -1,10 +1,7 @@
 import { BtnAddRecipe, CategoriesFilter, FormModal, Navbar, RecipesGallery } from "../components"
-import { useUiStore } from "../hooks"
+import { Footer } from "../components/Footer"
 
 export const BreakfastPage = () => {
-
-  // Nos traemos el estado de la modal de detalles para decidir si el footer mantiene una posición fija o relativa (clase CSS "fixed-bottom")
-  const {formModalIsOpen, recipeModalIsOpen} = useUiStore()
 
   return (
     <>
@@ -33,14 +30,7 @@ export const BreakfastPage = () => {
     </div>
 
     {/* Pie de Página */}
-    <footer 
-            className={
-                `text-center py-3 colorFondo ${formModalIsOpen ? '' : 'fixed-bottom'}` 
-            }
-        >
-        <i className="fa-regular fa-copyright"></i>
-        <span>&nbsp; 2023 | Ñam Ñam</span>
-    </footer>
+    <Footer/>
     
     </>
   )
