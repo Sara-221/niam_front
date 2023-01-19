@@ -13,6 +13,10 @@
     background-position: center;
 }
 
+.pwInput{
+    background-color:  #FFFCC8;
+    padding:8px;
+}
 
 .mostrarContrasenia {
     font-style: italic;

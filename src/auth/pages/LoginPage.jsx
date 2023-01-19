@@ -73,8 +73,7 @@ export const LoginPage = () => {
               />
             <span className='input-group-text mb-2'>
               <i 
-                className="fa-solid fa-at"
-                id="inputGroupFileAddon04">
+                className="fa-solid fa-at">
               </i>
             </span>
           </div>
@@ -86,7 +85,7 @@ export const LoginPage = () => {
             placeholder="Tu contraseña"
             value={loginData.password}
             onChange={handleLoginInputChange.bind()}
-            className='form-control mb-3'
+            className='form-control mb-3 pwInput'
             inputClassName='border-0'
             buttonClassName='bg-transparent mostrarContrasenia'
             showButtonContent='mostrar'
