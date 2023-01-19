@@ -144,6 +144,10 @@ main {
     border-radius: 5px;
 }
 
+.modalForm {
+    padding-bottom: 32px;
+}
+
 .notas {
     width: 50vw;
     max-height: 40vh;
