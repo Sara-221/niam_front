@@ -13,7 +13,7 @@ const customStyles = {
       right: 'auto',
       bottom: 'auto',
       marginRight: '0%',
-      transform: 'translate(10%, 10%)',
+      transform: 'translate(4%, 4%)',
     },
   };
 
@@ -47,6 +47,7 @@ export const RecipeModal = ({recipe}) => {
             onClick= {closeRecipeModal}>    
         </button>
         {/* Contenido de la modal */}
+        {/* Titulo y categoría */}
         <div className='d-flex align-items-start'>
             <img src={iconURL} alt={`icono ${category}`} />
             <div className='text-left mb-1'>
@@ -54,7 +55,8 @@ export const RecipeModal = ({recipe}) => {
                 <h5 className='h6'>{category}</h5>
             </div>
         </div>
-        <div className='d-sm-flex justify-content-between pe-3'>
+        {/* Información introducida por el usuario */}
+        <div className='d-sm-flex justify-content-between pe-sm-3'>
             <div>
                 <div className='d-sm-flex align-items-center'>
                     <h4 className='me-2'>Tiempo de preparación: </h4>
@@ -62,16 +64,16 @@ export const RecipeModal = ({recipe}) => {
                 </div>
                 <div className='d-sm-flex align-items-center'>
                     <h4 className='me-2'>Enlace: </h4>
-                    <h6><a className='text-lowercase text-decoration-none' href={url}>{url}</a></h6>
+                    <h6><a className='text-lowercase text-decoration-none small' href={url}>{url}</a></h6>
                 </div>
-                {/* Usamos la etiqueta de html <pre> para que se conserven los saltos de línea y espacios introducidos por el usuario  */}
+                {/* Párrafos de ingredientes y elaboración  */}
                 <div className='d-sm-flex flex-column'>
                     <h4 className='me-2'>Ingredientes: </h4>
-                    <p className='ingredientes'>{ingredients}</p>
+                    <p className='ingredientes p-2'>{ingredients}</p>
                 </div>
                 <div className='d-sm-flex flex-column'>
                     <h4>Elaboración:</h4>
-                    <p className='p-sm-2 overflow-auto elaboracion'>{method}</p>
+                    <p className='p-2 overflow-auto elaboracion'>{method}</p>
                 </div>
             </div>
             <div className='notas'>

@@ -13,11 +13,6 @@
     background-position: center;
 }
 
-.pwInput{
-    background-color:  #FFFCC8;
-    padding:8px;
-}
-
 .mostrarContrasenia {
     font-style: italic;
     font-weight: lighter;
@@ -32,7 +27,6 @@
     .loginBg {
         width: 50vw;
         height: 65vh;
-        background-size: cover;
         margin-right: 40px;
     }
 }

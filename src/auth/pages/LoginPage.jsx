@@ -79,27 +79,19 @@ export const LoginPage = () => {
           </div>
           <label>Contraseña</label>
           <div className='input-group'>
+            {/* Opción ver/ocultar contraseña */}
           <PasswordMask
             id="password"
             name="password"
             placeholder="Tu contraseña"
             value={loginData.password}
             onChange={handleLoginInputChange.bind()}
-            className='form-control mb-3 pwInput'
+            className='form-control mb-3'
             inputClassName='border-0'
             buttonClassName='bg-transparent mostrarContrasenia'
             showButtonContent='mostrar'
             hideButtonContent='ocultar'
           />
-            {/* <input 
-              type="password" 
-              name="password"
-              id="password"
-              placeholder="Tu contraseña"
-              value={loginData.password}
-              onChange={handleLoginInputChange}
-              className='form-control mb-3'
-              /> */}
             <span className='input-group-text mb-3'>
               <i 
                 className="fa-solid fa-lock">

@@ -135,11 +135,10 @@ main {
 
 /* Reglas específicas modales */
 .modalForm, .modalRecipe {
-    width:80vw;
-    max-height:60vh;
-    overflow-y: auto;
-    margin: auto;
-    padding: 32px 24px 40px;
+    width:90vw;
+    height:90vh;
+    overflow: auto;
+    padding: 32px 24px 0px;
     background-color: white;
     border: 3px solid #DAE6F9;
     border-radius: 5px;
@@ -147,46 +146,33 @@ main {
 
 .notas {
     width: 50vw;
-    max-height: 32vh;
+    max-height: 40vh;
     white-space:pre-line;
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
-    margin-left: 24px;
+    margin: auto;
     padding: 16px 8px;
     background-color: #DAE6F9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 7px rgba(0, 0, 0, 0.06);
 }
 
 .ingredientes, .elaboracion {
-    max-width: 450px;
+    width: 100%;
+    overflow: auto;
     white-space: pre-wrap;
     border: 1px solid #3D495C;
     border-radius: 5px;
 }
 
-.ingredientes {
-    max-height: 100px;
-    overflow-y:auto;
-}
-
-.elaboracion {
-    max-height: 250px;
-}
 
 .btnPos {
     position: relative;
     bottom:0px;
     right: 0;
-    margin: 24px auto;
+    margin: 24px auto 4px;
 }
 
-.modalRecipe{
-    display: inline-block;
-    min-height: 50vh;
-    padding: 24px;
-    position: relative;
-}
 
 /* Pagina 404 */
 .fondo404 {
@@ -217,7 +203,7 @@ main {
 
 
 
-/* Responsive */
+/* Responsive Tablet */
 @media screen and (min-width: 768px) {
     .btnCerrar{
         top: 4%
@@ -228,15 +214,23 @@ main {
     }
 
     .notas {
-        width: 32vw;
+        width: 40vw;
+        margin: 0px 16px;
     }
 
     .btnPos{
         display: flex;
         justify-content: flex-end;
         position: relative;
-        bottom: 0;
+        bottom: 0px;
         right: 0px;
         margin: 0;
+    }
+}
+
+/* Responsive Desktop */
+@media screen and (min-width: 1024px) {
+    .btnPos{
+        bottom: 50px;
     }
 }

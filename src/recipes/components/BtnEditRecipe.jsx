@@ -17,7 +17,7 @@ export const BtnEditRecipe = () => {
   return (
     <>
         <button 
-          className='btn btn-dark mb-5 me-2'
+          className='btn btn-dark mb-sm-5'
           onClick={handleEditRecipe}>
             <i className="fa-solid fa-pen"></i>
               &nbsp; Editar

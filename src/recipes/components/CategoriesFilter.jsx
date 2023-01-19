@@ -10,11 +10,11 @@ export const CategoriesFilter = () => {
     menu.classList.toggle("dNone")
     // Cambiar icono en función de si el menú está abierto o no
     if(menu.classList.contains('dNone')){
-      icon.classList.remove("fa-chevron-down")
-      icon.classList.add("fa-chevron-up")
-    }else{
       icon.classList.add("fa-chevron-down")
       icon.classList.remove("fa-chevron-up")
+    }else{
+      icon.classList.remove("fa-chevron-down")
+      icon.classList.add("fa-chevron-up")
     }
   }
 
@@ -24,7 +24,7 @@ export const CategoriesFilter = () => {
       className='p-2 py-sm-3'>
         <h4 onClick={openFilter} className="filtro">
           Categorías &nbsp;
-          <i className="fa-solid fa-chevron-down" id='menuIcon'></i>
+          <i className="fa-solid fa-chevron-up" id='menuIcon'></i>
         </h4>
         <nav className='list-group' id='menu'>
           {/* En la siguiente lista, asignamos de forma condicional la clase de CSS "activeCategory", dependiendo de si la categoría ha sido seleccionada o no por el usuario */}
