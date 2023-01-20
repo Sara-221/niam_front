@@ -41,7 +41,6 @@ export const AppRouter = () => {
       <Route path='/recetas/sopas-y-cremas' element={<SoupsPage/>}/>
       <Route path='/recetas/principales' element={<MainsPage/>}/>
       <Route path='/recetas/postres' element={<DessertsPage/>}/>
-      <Route path='/recetas/logout' element={<LoginPage/>}/>
       {/* Página de error */}
       <Route path='/recetas/*' element={<Error404/>}/>
 
